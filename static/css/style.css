@@ -1,0 +1,15 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    --gray: #ffffff33;
+    --dark: #131313;
+    --green: #cefd51;
+}
+
+a{text-decoration: none;color: white;}
+
+body{
+    background-color: var(--dark);
+    font-family: "Lato", sans-serif;
+}
