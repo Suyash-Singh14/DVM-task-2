@@ -283,6 +283,50 @@ body{
 }
 
 
+/* Behind the Scenes */
+.bts{
+    width: 1040px;
+    text-align: center;
+    margin: auto;
+    margin-top: 20%;
+}
+
+.bts .heading{
+    text-transform: uppercase;
+    font-family: Commuter, sans-serif;
+    font-weight: 600;
+    font-size: 4em;
+    letter-spacing: 4px;
+}
+
+.bts p{
+    font-size: 2em;
+    font-family: 'Lato', sans-serif;
+    margin: 5% 0 10% 0;
+}
+
+.bts-grid{
+    margin-inline: auto;
+    display: grid;
+    grid-template-columns: repeat(8, 1fr);
+    /* grid-template-rows: repeat(4, 1fr); */
+    gap: 10px;
+}
+
+.bts-grid .box{
+    border-radius: 5px;
+}
+.bts-grid .bigbox img{
+    height: 360px;
+}
+
+.bts-grid .smallbox img{
+    height: 180px;
+}
+.bts-grid .bigbox{
+    grid-column: span 2;
+    grid-row: span 2;
+}
 
 
 /* Contact  */

@@ -9,3 +9,12 @@ window.addEventListener('scroll', ()=>{
     let value = window.scrollY;
     base.style.marginBottom = value * 0.5 + "px";
 })
+
+// Behind the Scenes
+let myTarget = document.querySelector('.target')
+
+window.addEventListener('scroll', function() {
+  if(myTarget.offsetTop - window.scrollY <= 0){
+    myTarget.style.color = "red"
+  }
+})
