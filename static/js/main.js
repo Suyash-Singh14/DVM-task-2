@@ -43,3 +43,19 @@ for (let index = 0; index < 4; index++) {
     ViewButton[index].classList.remove('active');
   })
 }
+
+let menu = document.querySelector(".menuIcon");
+let hamburger = document.querySelector(".hamburgerNav");
+let close = document.querySelector(".close");
+
+menu.addEventListener("click", ()=>{
+  hamburger.classList.add("active");
+  menu.classList.add("active");
+  document.body.style.overflow = 'hidden';
+})
+
+close.addEventListener("click", ()=>{
+  hamburger.classList.remove("active");
+  menu.classList.remove("active");
+  document.body.style.overflow = 'initial';
+})

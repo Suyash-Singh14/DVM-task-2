@@ -565,10 +565,74 @@ footer{
 }
 .last .right a:hover{color: var(--green);}
 
+.hamburgerNav{
+    display: none;
+    position: sticky;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    z-index: 10;
+}
+
+.hamburgerNav .popUp{
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background-color: white;
+    width: 90vw;
+    height: 90vh;
+}
+
+.hamburgerNav .popUp .nav-links{
+    display: flex;
+    flex-direction: column;
+    color: black;
+    gap: 20px;
+}
+
+.hamburgerNav .popUp .nav-links a{
+    color: black;
+    font-size: 2em;
+    text-transform: uppercase;
+}
+
+.hamburgerNav .popUp .right{
+    display: flex;
+    color: black;
+}
+
+.close{
+    color: rgb(16, 16, 16);
+    text-transform: uppercase;
+    font-family: Commuter, sans-serif;
+}
+.menuIcon{
+    cursor: pointer;
+    display: none;
+    position: fixed;
+    bottom: 20px;
+    left: 50px;
+    border-radius: 30px;
+    backdrop-filter: blur(3px);
+    background-color: rgba(255, 255, 255, 0.225);
+    border: 1px solid rgb(255 255 255 / 11%);
+    padding: 15px 20px;
+    font-size: 25px;
+    font-family: Commuter, sans-serif;
+    border: none;
+    z-index: 10;
+    color: white;
+    text-transform: uppercase;
+    font-size: 16px;
+    transition: 300ms all;
+}
+
+.menuIcon:hover{color: black;   background-color: white;}
 
 /* Media Queries */
 @media screen and (max-width: 1300px) {
-    .nav, .intro .layout, .intro .layout .subgrid, .intro .content h1, .cards{
+    .nav, .intro .layout, .intro .layout .subgrid, .intro .content h1, .cards, .About{
         max-width: 950px;
         margin: auto;
     }
@@ -604,6 +668,16 @@ footer{
         height: 120%;
         margin-bottom: 50%;
     }
+    .hamburgerNav.active{
+        display: flex;
+    }
+    .menuIcon{display: initial;}
+    .about{flex-direction: column-reverse;}
+    .about .right{margin: auto;}
+    .about .right video {
+        width: 80%;
+    }
+    .aboutHeading{font-size: 2.5em;}
 }
 
 @media screen and (max-width: 1070px) {
@@ -647,5 +721,11 @@ footer{
     }
     .intro video {
         height: 175px;
+    }
+    .about .left .content #box1 {grid-column: 1 / 6;}
+    .about .left .content #box2 {grid-column: 1 / 6;}
+    .about .left .content #box3 {grid-column: 1 / 6; grid-row: 3/4;}
+    .about .right video {
+        width: 50%;
     }
 }
