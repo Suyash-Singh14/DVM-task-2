@@ -59,3 +59,53 @@ close.addEventListener("click", ()=>{
   menu.classList.remove("active");
   document.body.style.overflow = 'initial';
 })
+
+// form validation
+let form = document.querySelector('.contact-form');
+let inputs = document.querySelectorAll(".contact-form input");
+let spans = document.querySelectorAll(".contact-form span");
+
+form.addEventListener('submit', (e)=>{
+  let message = 0;
+  for (let index = 0; index < 4; index++) {
+      if(inputs[index].value==[]){
+        console.log("Hello");
+        message = 1;
+        break;
+      }
+    
+  }
+
+  if(inputs[0].value==[]){
+    spans[0].innerHTML = 'First Name <span> *First Name is required </span>'
+  }
+  else{
+    spans[0].innerHTML = 'First Name'
+  }
+
+  if(inputs[1].value==[]){
+    spans[1].innerHTML = 'Last Name <span> *Last Name is required </span>'
+  }
+  else{
+    spans[1].innerHTML = 'Last Name'
+  }
+
+  if(inputs[3].value==[]){
+    spans[3].innerHTML = 'Message <span> *Message is required </span>'
+  }
+  else{
+    spans[3].innerHTML = 'Message'
+  }
+
+  if(inputs[2].value==[]){
+    spans[2].innerHTML = 'Email<span> *Email is required </span>'
+  }
+  else{
+    spans[2].innerHTML = 'Email'
+  }
+
+
+  if(message==1){
+    e.preventDefault();
+  }
+})

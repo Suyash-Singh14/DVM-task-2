@@ -365,11 +365,9 @@ body{
     }
     to{transform: rotate(0deg);}
 }
-.animate{
-    
-}
 
 
+/* Behind the scenes */
 .bts{
     width: 1040px;
     text-align: center;
@@ -423,7 +421,7 @@ body{
     height: 150vh;
 }
 .Testimonials .testimonialBox{
-    max-width: 900px;
+    width: 80%;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
@@ -508,12 +506,19 @@ body{
     margin: 10px 0;
     border-radius: 5px;
     padding: 25px 0;
+    color: white;
 }
 
 .contact span{
     height: fit-content;
     text-transform: uppercase;
+    display: inline-block;
     font-family: 'Lato', sans-serif;
+}
+
+.contact span span{
+    font-size: 0.7em;
+    color: #d96868;
 }
 #lastname{grid-area: 1/4/2/7}
 
@@ -678,6 +683,20 @@ footer{
         width: 80%;
     }
     .aboutHeading{font-size: 2.5em;}
+    .subgrid>.column:nth-child(1){
+        grid-column: 2/span 8;
+    }
+    .subgrid>.column:nth-child(2){
+        grid-area: 3/6 / span 2/ span 8;
+
+    }
+    .subgrid>.column:nth-child(3){
+        grid-area: 8/3/ span 2 / span 8;
+    }
+    .subgrid>.column:nth-child(4){
+        grid-area: 9/ 5/ span 2 / span 8;
+    }
+    
 }
 
 @media screen and (max-width: 1070px) {
