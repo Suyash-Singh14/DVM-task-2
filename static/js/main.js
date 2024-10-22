@@ -21,10 +21,25 @@ let Testimonials = document.querySelector(".Testimonials");
 
 window.addEventListener('scroll', ()=>{
   if(Testimonials.offsetTop - window.scrollY <=0){
-    console.log("scroll");
-    testbox1.style.bottom = 0.5 * window.scrollY + "px";
-    testbox4.style.bottom = 0.5 * window.scrollY + "px";
-    testbox2.style.bottom = 0.2 * window.scrollY + "px";
-    testbox3.style.bottom = 1 * window.scrollY + "px";
+    let value = (window.scrollY - Testimonials.offsetTop) 
+    testbox1.style.bottom = 0.5 * value + "px";
+    testbox4.style.bottom = 0.5 * value + "px";
+    testbox2.style.bottom = 0.2 * value + "px";
+    testbox3.style.bottom = 1 * value + "px";
   }
 })
+
+let ViewButton = document.querySelectorAll(".card .imgContainer button");
+let cards = document.querySelectorAll(".cards .card");
+
+for (let index = 0; index < 4; index++) {
+  cards[index].addEventListener('mouseover', ()=>{
+    ViewButton[index].classList.add('active');
+  })
+}
+
+for (let index = 0; index < 4; index++) {
+  cards[index].addEventListener('mouseleave', ()=>{
+    ViewButton[index].classList.remove('active');
+  })
+}

@@ -9,9 +9,10 @@
 
 @font-face {
     font-family: Commuter;
-    src: url(/Fontspring-DEMO-commuterssans-extrabold.otf);
+    src: url(/Fontspring-DEMO-commuterssans-regular.otf);
 }
 
+button{outline: none;}
 a{text-decoration: none;color: white;}
 li{list-style: none;}
 body{
@@ -35,6 +36,7 @@ body{
     font-family: "Roboto", sans-serif;
     text-transform: uppercase;
 }
+.nav .nav-links li a:hover{color: #cefd51;}
 
 .nav .nav-links{
     transform: scale(1.1, 0.8);
@@ -46,21 +48,24 @@ body{
 .right .language{
     margin: 0 20px;
     text-transform: uppercase;
-    font-family: "Roboto", sans-serif;
+    font-family: Commuter, sans-serif;
+    font-size: 13px;
 }
+.right .language:hover{color: #cefd51;}
 
 .right .contactBtn{
     background-color: var(--green);
     border-radius: 50px;
     padding: 15px 35px;
-    font-family: "Roboto", sans-serif;
+    font-family: Commuter, sans-serif;
     cursor: pointer;
-    font-size: 20px;
+    font-size: 16px;
     outline: none;
     color: #000000ca;
     margin-left: 20px;
+    transition: padding 300ms;
 }
-
+.right .contactBtn:hover{padding: 20px 35px;}
 .sticky{
     position: fixed;
     top: 50%;
@@ -146,6 +151,7 @@ body{
     border: 1px solid rgb(255 255 255 / 11%);
     width: 300px;
     height: 300px;
+    position: relative;
 }
 .intro .subgrid>.column:nth-child(5) {
     grid-area: 6 / 2 / auto / span 6;
@@ -157,19 +163,11 @@ body{
 
 
 
-
-
-
-
-
-
-
-
-
+/* Cards section */
 .cards .layout{
     display: grid;
     grid-gap: 20px;
-    grid-template-columns: minmax(200px, 1fr) 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
     padding: 0px 20px;
     margin: 10% 0 20% 0;
 }
@@ -205,11 +203,37 @@ body{
     background-color: transparent;
     color: gray;
     height: fit-content;
+    transition: 300ms all;
 }
 
+.card .buttons button:hover{
+    color: white;
+    border: 1px solid white;
+}
+
+.card .imgContainer{
+    position: relative;;
+}
 .card img{
     border-radius: 10px;
 }
+.card .imgContainer button{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 25px;
+    background-color: #131313;
+    color: white;
+    padding: 15px 20px;
+    font-family: Commuter, sans-serif;
+    transition: all 300ms;
+    opacity: 0;
+}
+.card .imgContainer  .active{
+    opacity: 1;
+}
+.card .imgContainer button:hover{padding: 20px;}
 
 
 
@@ -393,6 +417,11 @@ body{
 }
 
 /* Testimonials */
+.Testimonials{padding: 5%;}
+.Testimonials .content{
+    margin: 200px 0;
+    height: 150vh;
+}
 .Testimonials .testimonialBox{
     max-width: 900px;
     margin: auto;
@@ -408,7 +437,7 @@ body{
     font-weight: 600;
     font-size: 4em;
     letter-spacing: 4px;
-    margin: 10% 0 5% 0;
+    margin: 0 0 5% 0;
 }
 
 .testimonialBox img{
@@ -422,6 +451,7 @@ body{
 .Testimonials .column>div:nth-child(1){
     margin-bottom: 10px;
 }
+
 /* Contact  */
 .contact{
     display: grid;
@@ -486,6 +516,20 @@ body{
     font-family: 'Lato', sans-serif;
 }
 #lastname{grid-area: 1/4/2/7}
+
+.contact-form button{
+    border-radius: 50%;
+    font-family: Commuter, sans-serif;
+    text-transform: uppercase;
+    background-color: #cefd51;
+    height: 200px;
+    width: 200px;
+    font-size: 2rem;
+    transform: rotate(-45deg);
+    transition: transform 500ms;
+}
+
+.contact-form button:hover{transform: rotate(0);}
 /* footer  */
 footer{
     background-color: black;
@@ -520,3 +564,88 @@ footer{
     color: #818080;
 }
 .last .right a:hover{color: var(--green);}
+
+
+/* Media Queries */
+@media screen and (max-width: 1300px) {
+    .nav, .intro .layout, .intro .layout .subgrid, .intro .content h1, .cards{
+        max-width: 950px;
+        margin: auto;
+    }
+    .intro .content h1{
+        font-size: 6em;
+        line-height: 0.95;
+        padding-top: 100px;
+    }
+    .nav .nav-links, .nav .right{display: none;}
+    .cards .layout>.card:nth-child(1){
+        grid-row: 1/5;
+        grid-column: 1/3;
+    }
+    .cards .layout>.card:nth-child(2){
+        grid-row: 1/5;
+        grid-column: 3/5;
+    }
+    .cards .layout>.card:nth-child(3){
+        grid-row: 5/9;
+        grid-column: 1/3;
+    }
+    .cards .layout>.card:nth-child(4){
+        grid-row: 5/9;
+        grid-column: 3/5;
+    }
+    .subgrid>.column:nth-child(4) {
+        grid-area: 5 / 7 / span 2 / span 3;
+    }
+    .intro .subgrid>.column:nth-child(5){
+        grid-area: 7 / 2 / span 2 / span 6;
+    }
+    .intro .layout .subgrid{
+        height: 120%;
+        margin-bottom: 50%;
+    }
+}
+
+@media screen and (max-width: 1070px) {
+    .nav, .intro .layout, .intro .layout .subgrid, .intro .content h1{
+        max-width: 600px;
+        margin: auto;
+    }
+    .intro .content h1{
+        font-size: 5em;
+    }
+}
+
+@media screen and (max-width: 630px) {
+    .cards .layout>.card:nth-child(1){
+        grid-row: 1/5;
+        grid-column: 1/5;
+    }
+    .cards .layout>.card:nth-child(2){
+        grid-row: 5/9;
+        grid-column: 1/5;
+    }
+    .cards .layout>.card:nth-child(3){
+        grid-row: 9/14;
+        grid-column: 1/5;
+    }
+    .cards .layout>.card:nth-child(4){
+        grid-row: 14/19;
+        grid-column: 1/5;
+
+    }
+    .nav, .intro .layout, .intro .layout .subgrid, .intro .content h1{
+        max-width: 380px;
+        margin: auto;
+    }
+    .intro .content h1{
+        font-size: 4em;
+    }
+    .intro .column img{
+        width: 200px;
+        height: 200px;
+    }
+    .intro video {
+        height: 175px;
+    }
+}
