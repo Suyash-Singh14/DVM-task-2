@@ -16,7 +16,7 @@ window.addEventListener('scroll', ()=>{
 let testbox1 =  document.querySelector(".Testimonials .subgrid>.column:nth-child(1)");
 let testbox2 =  document.querySelector(".Testimonials .subgrid>.column:nth-child(2)");
 let testbox3 =  document.querySelector(".Testimonials .subgrid>.column:nth-child(3)");
-let testbox4 =  document.querySelector(".Testimonials .subgrid>.column:nth-child(4)");
+let testbox4 =  document.querySelector(".Testimonials .subgrid>.column:nth-child(4)")
 let Testimonials = document.querySelector(".Testimonials");
 
 window.addEventListener('scroll', ()=>{
